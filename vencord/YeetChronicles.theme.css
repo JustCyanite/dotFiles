@@ -1,0 +1,272 @@
+/**
+ * @name Yeet Chronicles
+ * @description Wubbalubba-dub-dub
+ * @author Me
+ * @version 1.0.0
+ */
+
+ @import url('https://mwittrien.github.io/BetterDiscordAddons/Themes/DiscordRecolor/DiscordRecolor.css');
+
+
+ @import url('https://commandcrafterhd.gitlab.io/bates-discord-theme/css/hideUsers.css');
+
+ @import url('https://gibbu.github.io/BetterDiscord-Themes/AdjustableServerWidth/base.css');
+
+
+
+ :root {
+
+/*-----------------Discord Recolour--------------*/
+
+	--font:						Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;					/*	General Font				*/
+	--settingsicons:			1;						/*	Use Settings Icons in User/Server/Channel Settings: 1 = yes, 0 = no			*/
+	
+	--accentcolor: 				0,90,255;		  	/*	Blurple				 - 	default:	114,137,218		 - 	hex:	#7289da		*/
+	--accentcolor2: 			255,115,250;			/*	Boostpink			 - 	default:	255,115,250		 - 	hex:	#ff73fa		*/
+	--linkcolor: 				0,150,244;				/*	Link Color			 - 	default:	0,176,244		 - 	hex:	#00b0f4		*/
+	--mentioncolor: 			4,217,255;				/*	Highlight			 - 	default:	250,166,26		 - 	hex:	#faa61a		*/
+	
+	--textbrightest: 			255,255,255;			/*	Text Color 1		 - 	default:	255,255,255		 - 	hex:	#ffffff		*/
+	--textbrighter: 			222,222,222;			/*	Text Color 2		 - 	default:	220,221,222		 - 	hex:	#dcddde		*/
+	--textbright: 				185,185,185;			/*	Text Color 3		 - 	default:	185,187,190		 - 	hex:	#b9bbbe		*/
+	--textdark: 				140,140,140;			/*	Text Color 4		 - 	default:	142,146,151		 - 	hex:	#8e9297		*/
+	--textdarker: 				115,115,115;			/*	Text Color 5		 - 	default:	114,118,125		 - 	hex:	#72767d		*/
+	--textdarkest: 				80,80,80;				/*	Text Color 6		 - 	default:	79,84,92		 - 	hex:	#4f545c		*/
+	
+	--backgroundaccent: 		50,50,50;				/*	Background Accent	 - 	default:	64,68,75		 - 	hex:	#40444b		*/
+	--backgroundprimary: 		30,30,30;				/*	Background 1		 - 	default:	54,57,63		 - 	hex:	#36393f		*/
+	--backgroundsecondary: 		25,25,25;				/*	Background 2		 - 	default:	47,49,54		 - 	hex:	#2f3136		*/
+	--backgroundsecondaryalt: 	15,15,15;				/*	Background 3		 - 	default:	41,43,47		 - 	hex:	#292b2f		*/
+	--backgroundtertiary: 		15,15,20;				/*	Background 4		 - 	default:	32,34,37		 - 	hex:	#202225		*/
+	--backgroundfloating: 		20,20,20;					/*	Background Elevated	 - 	default:	24,25,28		 - 	hex:	#18191c		*/
+
+/*-------------Adjustable Server Icons-------------*/
+
+    --server-icon-size: 40px; /* Size of the server icons | DEFAULT: 35px */
+    --server-icon-spacing: 5px; /* Spacing between server icons. Negative values are allowed | DEFAULT: 8px */
+    --server-container-padding: 14px; /* Spacing to the left and right sides of server icons | DEFAULT: 10px */
+
+
+
+/*-----Neon--------*/
+
+    --rgb-highlight: 255, 0, 0;            /*  Right sidebar(member list) group border colour      */
+    --group-colour: 0,100,255;             /*  Right sidebar(member list) group name colour        */
+	--highlight: rgb(255, 0, 240);       /*  Left sidebar(server list) "selected dot" colour     */
+    --textbox-border: 20,150,200;          /*  Center text box border colour                       */
+    
+    --vc-button-colours: 0,90,255;         /*  Video and Share Screen button colours               */
+
+
+/*----Nocturnal----*/
+
+--primaryGradient1: #ff0000;             /*  Right side of the gradient                          */
+--primaryGradient2: #0011ff;             /*  Left side of the gradient                           */
+
+--animation-length: .8s                    /*  Length of (gradient)animation                       */
+
+}
+
+/*------------CHANGING ANYTHING BELOW HERE IS NOT ADVISED. ONLY DO SO IF YOU KNOW WHAT YOU ARE DOING---------------*/
+
+/*----title-----*/
+.membersGroup-v9BXpm {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: rgb(var(--group-colour));
+	padding: 0px;
+  }
+  
+  .membersGroup-v9BXpm::before {
+	content: '\00a0';
+	width: 100%;
+	height: 2px;
+	margin-right: 3px;
+	display: inline-block;
+	background: linear-gradient(90deg, rgba(var(--rgb-highlight), 0) 0%, rgba(var(--rgb-highlight), 1) 100%);
+  }
+  
+  .membersGroup-v9BXpm::after {
+	content: '\00a0';
+	width: 100%;
+	height: 2px;
+	margin-left: 3px;
+	display: inline-block;
+	background: linear-gradient(90deg, rgba(var(--rgb-highlight), 1) 0%, rgba(var(--rgb-highlight), 0) 100%);
+  }
+  
+/*-----border------*/
+.scrollableContainer-2NUZem, .wrapper-2aW0bm, .quickswitcher-3JagVE,
+.input-2VB9rf, .markup-2BOw-j code, .theme-dark .uploadModal-2ifh8j {
+  border: 1px solid rgb(var(--textbox-border));
+}
+
+.input-2VB9rf, .list-17lzo8, .wrapper-1-Fsb8, .button-38aScr,
+.colorable-1bkp8v.primaryDark-3mSFDl, .colorable-1bkp8v.primaryDark-3mSFDl .centerIcon-2G6o-T,
+.theme-dark .uploadModal-2ifh8j, .uploadModal-2ifh8j .footer-3mqk7D.hasSpoilers-1IRtQC,
+.button-1YfofB.buttonColor-7qQbGO.buttonActive-3FrkXp,
+.button-1YfofB .buttonColor-7qQbGO.buttonActive-3FrkXp {
+  background-color: var(--background);
+}
+
+.button-1YfofB.buttonColor-7qQbGO.buttonActive-3FrkXp:hover,
+.button-1YfofB .buttonColor-7qQbGO.buttonActive-3FrkXp:hover {
+  background-color: rgb(0
+  ,0,255);
+}
+
+.list-17lzo8 {
+  border: 1px solid var(--accentcolor);
+  border-radius: 5px;
+}
+
+.listItem-GuPuDH:hover > div > .item-2hkk8m,
+.item-2hkk8m[style="opacity: 1; height: 40px; transform: none;"] {
+  background-color: var(--highlight);
+}
+
+.newMessagesBar-265mhP {
+  margin-top: 1vh;
+  background-color: var(--background);
+  border: 1px solid var(--highlight);
+  border-radius: 5px;
+}
+
+.barButtonAlt-mYL1lj {
+  border-left: none !important;
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+
+.barButtonMain-3K-jeJ, .span-1mKrMp {
+  border-right: none !important;
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+
+.lookFilled-1Gx00P.colorBrand-3pXr91 {
+  background-color: var(--background);
+  border: 1px solid rgb(var(--vc-button-colours));
+  color: white;
+}
+
+.lookFilled-1Gx00P.colorBrand-3pXr91:hover {
+  background-color: rgb(var(--vc-button-colours));
+  color: var(--background);
+}
+
+.lookOutlined-3sRXeN.colorRed-1TFJan {
+  background-color: var(--background);
+  border: 1px solid var(--close-button);
+  color: var(--close-button);
+}
+
+.lookOutlined-3sRXeN.colorRed-1TFJan:hover {
+  background-color: var(--close-button);
+  color: var(--background);
+}
+
+/*------Nocturnal(gradient)-------*/
+
+
+.members-1998pB, .members-1998pB>div {background-color: var(--backgroundDark);}
+.channel-2QD9_O.selected-1HYmZZ::after,.channel-2QD9_O:hover::after,.contentConnectedVoice-qL-YrL::after,.contentLockedText-1aHuz8:hover::after,.contentLockedVoice-1gx-SP:hover::after,.contentSelectedText-3wUhMi::after,.contentSelectedVoice-1WDIBM::after,.da-containerDefault:hover .content-20Aix8::after,.member-3W1lQa.popout-open .content-OzHfo4::after,.member-3W1lQa.popout-open:hover .content-OzHfo4::after,.member-3W1lQa:hover .content-OzHfo4::after {
+	transform: translateX(0)
+}
+
+
+
+.content-1x5b-n::after, .wrapper-2jXpOf.modeSelected-346R90 .content-1x5b-n::after {
+    content: "";
+    height: 2px;
+    width: 98.5%;
+    border-radius: 50px;
+    bottom: 0;
+    left: 1px;
+    position: absolute;
+    background-color: transparent;
+    background-image: linear-gradient(to right,var(--primaryGradient1),var(--primaryGradient2));
+    transform: translateX(-250px);
+    transition: all var(--animation-length) ease
+}
+
+.side-8zPYf6 .themed-OHr7kt.item-PXvHYJ:hover,.wrapper-2jXpOf:hover .content-1x5b-n {
+    background-color: rgba(0,0,0,.25)!important
+}
+
+.wrapper-2jXpOf.modeSelected-346R90 .content-1x5b-n {
+    background-color: rgba(0,0,0,.45)!important
+}
+
+.wrapper-2jXpOf.modeSelected-346R90 .content-1x5b-n::after,.wrapper-2jXpOf:hover .content-1x5b-n::after {
+    transform: translateX(0)
+}
+
+
+
+.layout-2DM8Md {
+	position: relative
+}
+
+.layout-2DM8Md:after {
+	content: "";
+	height: 2px;
+	width: 100%;
+	border-radius: 50px;
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	background-color: transparent;
+	background-image: linear-gradient(to right,var(--primaryGradient1),var(--primaryGradient2));
+	transform: translateX(110%);
+	transition: all var(--animation-length) ease
+}
+
+.channel-2QD9_O .layout-2DM8Md:after {
+	transform: translateX(-110%)
+}
+
+.layout-2DM8Md:hover {
+	background-color: rgba(0,0,0,.15)!important
+}
+
+.selected-aXhQR6 .layout-2DM8Md {
+	background-color: rgba(0,0,0,.25)!important
+}
+
+.layout-2DM8Md:hover:after,.selected-aXhQR6 .layout-2DM8Md:after {
+	transform: translateX(0)
+}
+
+.selected-aXhQR6 .layout-2DM8Md .name-uJV0GL {
+	color: #fff
+}
+
+
+
+#bd-settings-sidebar .ui-tab-bar-item::after,.side-8zPYf6 .item-PXvHYJ::after {
+	content: "";
+	height: 2px;
+	width: 98.5%;
+	border-radius: 50px;
+	bottom: 0;
+	left: 1px;
+	position: absolute;
+	background-color: transparent;
+	background-image: linear-gradient(to right,var(--primaryGradient1),var(--primaryGradient2));
+	transform: translateX(-250px);
+	transition: all var(--animation-length) ease
+}
+
+.listDefault-2y5Z9D .clickable-23RaYz:hover .content-3xS9Lh,.side-8zPYf6 .themed-OHr7kt.item-PXvHYJ:hover,.wrapper-1ucjTd:hover .content-3at_AU {
+	background-color: rgba(0,0,0,.25)!important
+}
+
+.side-8zPYf6 .themed-OHr7kt.selected-3s45Ha.item-PXvHYJ,.wrapper-1ucjTd.modeSelected-1zApJ_ .content-3at_AU {
+	background-color: rgba(0,0,0,.45)!important
+}
+
+.side-8zPYf6 .themed-OHr7kt.item-PXvHYJ:hover::after,.side-8zPYf6 .themed-OHr7kt.selected-3s45Ha.item-PXvHYJ::after,.wrapper-1ucjTd.modeSelected-1zApJ_ .content-3at_AU::after,.wrapper-1ucjTd:hover .content-3at_AU::after {
+	transform: translateX(0)
+}
