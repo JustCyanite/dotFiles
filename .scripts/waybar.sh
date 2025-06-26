@@ -1,4 +1,6 @@
 #!/bin/sh
-
-killall waybar && waybar &
+if [[ $(pgrep -f 'waybar') ]]; then
+  killall waybar
+fi
+waybar
 exit
