@@ -1,0 +1,49 @@
+#!/bin/sh
+# shellcheck disable=SC2155
+
+# Profile file, runs on login. Environmental variables are set here.
+
+# Add all directories in `~/.local/bin` to $PATH
+export PATH="$PATH:$(find ~/.local/bin -type d | paste -sd ':' -)"
+
+# Default programs:
+export EDITOR="nvim"
+export TERMINAL="kitty"
+#export TERMINAL_PROG="kitty"
+export BROWSER="zen-browser"
+export QT_QPA_PLATFORM="wayland"
+export QT_QPA_PLATFORMTHEME="qt6ct"
+#export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+
+
+# Change the default crypto/weather monitor sites.
+# export CRYPTOURL="rate.sx"
+# export WTTRURL="wttr.in"
+
+# ~/ Clean-up:
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_SCRIPTS_HOME="$HOME/.scripts"
+export XDG_PICTURES_DIR="$HOME/Pictures/"
+export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
+export INPUTRC="$XDG_CONFIG_HOME/shell/inputrc"
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export WALLPAPERDIR="$HOME/Wallpapers"
+export HYPRDIR="$XDG_CONFIG_HOME/hypr"
+export HYPRSHOT_DIR="$XDG_PICTURES_DIR/Screenshots"
+#export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export HISTFILE="$XDG_CACHE_HOME/zshistory"
+
+export BEMENU_OPTS='-w -B 2 -R 8 --scrollbar autohide -s --fn "Cantarell Medium" --binding vim --fixed-height --bdr "#FF00FF" --scf '#93E1D4' --scb '#1F1F2F' --fb "#1E1E2E" --ff "#CDD6F4" --nb "#1E1E2E" --nf "#CDD6F4" --tb "#1E1E2E" --hb "#1111B" --tf "#F38BA8" --hf "#F9E2AF" --nf "#CDD6F4" --af "#CDD6F4" --ab "#1E1E2E"'
+
+[ ! -f "$XDG_CONFIG_HOME/shell/shortcutrc" ] && setsid -f shortcuts >/dev/null 2>&1
+
+# Switch escape and caps if tty and no passwd required:
+#sudo -n loadkeys "$XDG_DATA_HOME/larbs/ttymaps.kmap" 2>/dev/null
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

@@ -1,0 +1,198 @@
+{
+    "layer": "top", 
+    "position": "top",
+    "height": 40,
+//    "spacing": 0,
+    "margin-top": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+
+    "start_hidden": false,
+//-----------MODULE ORDERS-----------//
+
+    "modules-left": [
+        "cpu",
+        "memory",
+        "hyprland/workspaces"
+     ],
+     "modules-center": [
+        "custom/playerctlleft",
+        "cava",
+        "custom/playerctlright"
+     ],
+     "modules-right": [
+        "wireplumber",
+        "battery",
+        //"backlight/slider",
+        "network",
+        "clock",
+        "tray"
+     ],
+
+//-----------LEFT MODULES-----------//
+
+    "cpu": {
+        "format": "{usage}%  ",
+        "tooltip": true,
+        "on-click": "kitty sh -c 'btop'",
+        "interval": 3
+    },
+
+    "memory": {
+        "format": "{}%  ",
+        "interval": 3,
+        "max-length": 10,
+        "on-click": "kitty sh -c 'btop'",
+        "tooltip": true,
+        "tooltip-format": "{used}GB/{total}GB  \n{swapUsed:0.2f}GB/{swapTotal:0.2f}GB  "
+    },
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "sort-by-number": true,
+        "format-icons": {
+            //"1": "<span color='#0018f9'>壹</span>",
+            "1": "壹",
+            "2": "貳",
+            "3": "參",
+            "4": "肆",
+            "5": "伍",
+            "6": "陸",
+            "7": "柒",
+            "8": "捌",
+            "9": "玖",
+            "10":"拾"
+      }
+    },
+    
+//-----------CENTRE MODULES-----------//
+
+    "custom/playerctlleft": {
+        "format": "<span color='#1DB954'>󰓇 </span> <span>{}</span> {icon}",
+        "return-type": "json",
+        "max-length": 25,
+        "exec": "playerctl -p spotify_player metadata --format '{\"text\": \"{{artist}} \", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+        "on-click": "playerctl -p spotify_player play-pause",
+        "on-click-right": "$HOME/.scripts/spotify.sh",
+        "on-scroll-up": "playerctl -p spotify_player next",
+        "on-scroll-down": "playerctl -p spotify_player previous",
+        "format-icons": {
+            "Playing": "<span foreground='#94e2d5'></span>",
+            "Paused": "<span foreground='#f38ba8'></span>"
+        }
+    },
+    
+    "cava": {
+        "cava-config": "$HOME/.config/cava/config",
+        "framerate": 80,
+        "autosens": 1,
+        "bars": 25,
+        "source": "auto",
+        "monstercat": true,
+        "waves": false,
+        "sleep-timer": 4,
+        "hide-on-silence": true,
+        "bar_delimiter": 0,
+        "method": "pipewire",
+        "input-delay": 1,
+
+        "on-click": "playerctl -p spotify_player play-pause",
+        "on-click-right": "$HOME/.scripts/spotify.sh",
+        "on-scroll-up": "playerctl -p spotify_player next",
+        "on-scroll-down": "playerctl -p spotify_player previous",
+        "format-icons": [
+            "<span color='#94e2d5'>▁</span>", 
+            "<span color='#89dceb'>▂</span>", 
+            "<span color='#74c7ec'>▃</span>",
+            "<span color='#89b4fa'>▄</span>",
+            "<span color='#cba6f7'>▅</span>", 
+            "<span color='#f5c2e7'>▆</span>",
+            "<span color='#eba0ac'>▇</span>",
+            "<span color='#f38ba8'>█</span>"  
+        ]
+    
+    },
+    
+    "custom/playerctlright": {
+        "format": "<span>{}</span>",
+        "return-type": "json",
+        "max-length": 25,
+        "exec": "playerctl -p spotify_player metadata  --format '{\"text\": \"{{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+        "on-click": "playerctl -p spotify_player play-pause",
+        "on-click-right": "kitty sh -c spt",
+        "on-scroll-up": "playerctl -p spotify_player next",
+        "on-scroll-down": "playerctl -p spotify_player previous"
+    },
+
+
+//-----------RIGHT MODULES-----------//
+
+    "wireplumber": {
+        "format": " 󰋋 {volume}%",
+        "on-click": "$HOME/.scripts/volume.sh",
+	"on-click-middle": "qjackctl",
+	"on-click-right": "easyeffects",
+        "format-muted": "󰟎 ",
+        "max-volume": 150,
+        "scroll-step": 5
+    },
+
+    "battery": {
+    "interval": 60,
+    "states": {
+        "warning": 30,
+        "critical": 15
+      },
+    "format": "{capacity}% {icon}",
+    "format-icons": ["", "", "", "", ""],
+    "max-length": 25,
+    "on-scroll-up": "brightnessctl s 1%+",
+    "on-scroll-down": "brightnessctl s 1%-"
+    },   
+
+    "backlight/slider": {
+       "min": 0,
+       "max": 100,
+       "orientation": "horizontal",
+       "device": "intel_backlight"
+    },
+
+    "network": {
+        "format-ethernet": "   {bandwidthUpBytes}  {bandwidthDownBytes}",
+        "format-wifi": "   {bandwidthUpBytes}  {bandwidthDownBytes}",
+        "format-disconnected": "⚠ No Internet",
+        "on-click": "$HOME/.scripts/network.sh",
+        "tooltip": true,
+        "tooltip-format-ethernet": " |󰯎 {bandwidthTotalBytes}",
+        "tooltip-format-wifi": " {essid} ({signalStrength}%)",
+        "tooltip-format-disconnected": "⚠ Disconnected",
+        "interval": 1
+    },
+
+    "clock": {
+        "format": " {:%H:%M}",
+        "interval": 60,
+        "tooltip": true,
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+            "calendar": {
+                "mode"          : "year",
+                "mode-mon-col"  : 3,
+                "weeks-pos"     : "right",
+                "on-scroll"     : 1,
+                "on-click-right": "mode",
+                "format": {
+                    "months":     "<span color='#ffead3'><b>{}</b></span>",
+                    "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                    "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                    "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                    "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                    }                
+                }
+    },
+
+    "tray": {
+        "icon-size": 23,
+        "spacing": 10
+    }
+}

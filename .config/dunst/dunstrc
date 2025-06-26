@@ -1,0 +1,28 @@
+[global]
+frame_color = "#cba6f7"
+separator_color= frame
+highlight = "#cba6f7"
+font = FiraCode Nerd Font Propo SemiBold 10
+width = 300
+padding = 10
+horizontal_padding = 10
+alignment = "left"
+gap_size = 8
+transparency = 20
+corner_radius = 10
+mouse_left_click = "do_action"
+mouse_middle_click = "close_all"
+mouse_right_click = "close_current"
+
+[urgency_low]
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+
+[urgency_normal]
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+
+[urgency_critical]
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+frame_color = "#fab387"

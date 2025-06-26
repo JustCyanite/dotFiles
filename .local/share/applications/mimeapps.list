@@ -1,0 +1,25 @@
+[Added Associations]
+text/plain=editor.desktop;
+
+[Default Applications]
+image/png=img.desktop
+image/jpg=img.desktop
+image/jpeg=img.desktop
+image/gif=img.desktop
+image/svg+xml=img.desktop
+
+video/mp4=vid.desktop
+video/x-matroska=vid.desktop
+
+audio/mpeg=vid.desktop
+
+application/pdf=pdf.desktop
+application/json=editor.desktop
+application/x-php=editor.desktop
+application/x-shellscript=editor.desktop
+
+text/x-shellscript=editor.desktop
+text/plain=editor.desktop
+text/xml=editor.desktop
+text/html=browser.desktop
+x-scheme-handler/discord=vesktop.desktop

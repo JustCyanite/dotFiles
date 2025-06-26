@@ -1,0 +1,178 @@
+* {
+    font-family: FiraCode Nerd Font;
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+    min-height: 20px;    
+    color: #cdd6f4;
+}
+
+window#waybar {
+    background: transparent; 
+    border-bottom: transparent;
+    
+    
+}
+
+#cpu,
+#memory,
+#workspaces,
+#custom-playerctlleft,
+#cava,
+#custom-playerctlright,
+#wireplumber,
+#battery,
+/* #backlight-slider, */
+#network,
+#clock,
+#tray
+{
+	background-color: #1e1e2e;
+	padding-top: 0.2rem;
+	padding-bottom: 0.2rem;
+    padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	margin-top: 8px;
+	margin-bottom: 5px;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+tooltip {
+  background: #1e1e2e;
+  border-radius: 8px;
+  
+}
+
+#cpu
+{
+	margin-right: 0px;
+	margin-left: 0px;
+    padding-left: 0.8rem;
+}
+
+#memory
+{
+	margin-right: 0px;
+	margin-left: 0px;
+
+}
+
+#workspaces
+{
+	border-radius: 0 10px 10px 0;
+}
+
+#workspaces button {
+    border-radius: 10px;
+}
+
+#workspaces button.active {
+  background-color: #11111b;
+  transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.focused {
+  color: #a6adc8;
+}
+
+#workspaces button.urgent {
+  color: #f7768e;
+}
+
+#workspaces button:hover {
+  background: #11111b;
+  color: #cdd6f4;
+}
+
+#custom-playerctlleft
+{
+    border-radius: 10px 0 0 10px;
+
+    padding-left: 1.0rem;
+}
+
+#custom-cava
+{
+    border-radius: 10px 10px 10px 10px;
+}
+
+#custom-playerctlright
+{
+	border-radius: 0 10px 10px 0;
+
+	padding-right: 1.0rem;
+}
+
+#wireplumber
+{
+	border-radius: 10px 0 0 10px;
+    
+    padding-left: 0.7rem;
+}
+
+#battery
+{
+	margin-right: 0px;
+	margin-left: 0px;
+    	padding-right: 0.7rem;
+      padding-left: 0.7rem;
+}
+
+#battery.charging
+{
+  color: #a6e3a1;
+}
+
+#battery.warning:not(.charging)
+{
+  color: #f38ba8;
+}
+
+#backlight-slider slider
+{
+	  min-height: 0px;
+    min-width: 8px;
+    opacity: 0.5;
+    background-image: none;
+    background-color: #cba6f7;
+    border: none;
+    border-radius: 10px;
+    box-shadow: none;
+}
+#backlight-slider trough {
+    min-height: 5px;
+    min-width: 80px;
+    border-radius: 8px;
+}
+#backlight-slider highlight {
+    min-width: 10px;
+    min-height: 5px;
+    border-radius: 8px;
+}
+
+#network
+{
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+#clock
+{
+	margin-right: 0px;
+	margin-left: 0px;
+    	padding-right: 0.5rem;
+}
+
+#tray
+{
+	padding-right: 0.8rem;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+#tray menu
+{
+    background-color: #1e1e2e;
+    border-radius: 8px;
+}
