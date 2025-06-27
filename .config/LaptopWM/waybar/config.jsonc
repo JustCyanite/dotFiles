@@ -147,6 +147,7 @@
     "format": "{capacity}% {icon}",
     "format-icons": ["", "", "", "", ""],
     "max-length": 25,
+    "on-click": "$XDG_SCRIPTS_HOME/batteryMode.sh",
     "on-scroll-up": "brightnessctl s 1%+",
     "on-scroll-down": "brightnessctl s 1%-"
     },   
