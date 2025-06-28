@@ -1,0 +1,149 @@
+* {
+    font-family: FiraCode Nerd Font;
+    font-size: 13px;
+    border: none;
+    border-radius: 8px;
+    min-height: 20px;    
+    color: #cdd6f4;
+}
+
+window#waybar {
+    background: transparent; 
+    border-bottom: transparent;
+}
+
+#cpu,
+#memory,
+#workspaces,
+#custom-playerctlleft,
+#cava,
+#custom-playerctlright,
+#wireplumber,
+#network,
+#bluetooth,
+#clock,
+#tray
+{
+	background-color: #1e1e2e;
+	padding-top: 0.2rem;
+	padding-bottom: 0.2rem;
+    padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	margin-top: 8px;
+	margin-bottom: 5px;
+	margin-right: 0px;
+	margin-left: 0px;
+  border-radius: 0;
+}
+
+tooltip {
+  background: #1e1e2e;
+  border-radius: 8px;
+}
+
+#cpu
+{
+	margin-right: 0px;
+	margin-left: 0px;
+    padding-left: 0.8rem;
+}
+
+#memory
+{
+	margin-right: 0px;
+	margin-left: 0px;
+
+}
+
+#workspaces
+{
+	border-radius: 0 10px 10px 0;
+}
+
+#workspaces button {
+    border-radius: 10px;
+}
+
+#workspaces button.active {
+  background-color: #11111b;
+  transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.focused {
+  color: #a6adc8;
+}
+
+#workspaces button.urgent {
+  color: #f7768e;
+}
+
+#workspaces button:hover {
+  background: #11111b;
+  color: #cdd6f4;
+}
+
+#custom-playerctlleft
+{
+    border-radius: 10px 0 0 10px;
+
+    padding-left: 1.0rem;
+    margin-right: -0.5rem;
+}
+
+#cava
+{
+    border-radius: 8px;
+    padding-right: 1.0rem;
+    padding-left: 1.0rem;
+}
+
+#custom-playerctlright
+{
+	border-radius: 0 10px 10px 0;
+
+	padding-right: 1.0rem;
+  margin-left: -0.5rem;
+}
+
+#wireplumber
+{
+	border-radius: 10px 0 0 10px;
+    
+    padding-left: 0.7rem;
+}
+
+#network
+{
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+#bluetooth
+{
+  font-size: 15px;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+#clock
+{
+	margin-right: 0px;
+	margin-left: 0px;
+    	padding-right: 0.5rem;
+}
+
+#tray
+{
+	padding-right: 0.8rem;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+#tray menu
+{
+    background-color: #1e1e2e;
+    padding: 0.5rem;
+    color: #cdd6f4;
+    border: none;
+    border-radius: 8px;
+}

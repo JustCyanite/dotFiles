@@ -2,12 +2,12 @@
     "layer": "top", 
     "position": "top",
     "height": 40,
-//    "spacing": 0,
+    "spacing": 0,
     "margin-top": 0,
     "margin-left": 0,
     "margin-right": 0,
 
-    "start_hidden": false,
+    "reload_style_on_change": true,
 //-----------MODULE ORDERS-----------//
 
     "modules-left": [
@@ -15,16 +15,21 @@
         "memory",
         "hyprland/workspaces"
      ],
-     "modules-center": [
-        "custom/playerctlleft",
-        "cava",
-        "custom/playerctlright"
-     ],
+     "modules-center": ["group/visualiser"],
+     "group/visualiser": {
+       "orientation": "horizontal",
+       "modules": [
+           "custom/playerctlleft",
+           "cava",
+           "custom/playerctlright"
+       ]
+     },
      "modules-right": [
         "wireplumber",
         "battery",
         //"backlight/slider",
         "network",
+        "bluetooth",
         "clock",
         "tray"
      ],
@@ -163,12 +168,19 @@
         "format-ethernet": "   {bandwidthUpBytes}  {bandwidthDownBytes}",
         "format-wifi": "   {bandwidthUpBytes}  {bandwidthDownBytes}",
         "format-disconnected": "⚠ No Internet",
-        "on-click": "$HOME/.scripts/network.sh",
+        "on-click": "$XDG_SCRIPTS_HOME/network.sh",
+        "on-click-right": "$XDG_SCRIPTS_HOME/bluetooth.sh",
         "tooltip": true,
         "tooltip-format-ethernet": " |󰯎 {bandwidthTotalBytes}",
         "tooltip-format-wifi": " {essid} ({signalStrength}%)",
         "tooltip-format-disconnected": "⚠ Disconnected",
         "interval": 1
+    },
+
+    "bluetooth": {
+        "format": "",
+        "format-disabled": "",
+        "format-connected": "󰂱"
     },
 
     "clock": {
