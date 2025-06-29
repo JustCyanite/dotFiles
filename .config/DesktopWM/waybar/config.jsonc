@@ -78,7 +78,7 @@
         "max-length": 25,
         "exec": "playerctl -p spotify metadata --format '{\"text\": \"{{artist}} \", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
         "on-click": "playerctl -p spotify play-pause",
-        "on-click-right": "$HOME/.scripts/spotify.sh",
+        "on-click-right": "XDG_SCRIPTS_HOME/spotify.sh",
         "on-scroll-up": "playerctl -p spotify next",
         "on-scroll-down": "playerctl -p spotify previous",
         "format-icons": {
@@ -88,7 +88,7 @@
     },
     
     "cava": {
-        "cava-config": "$HOME/.config/cava/config",
+        "cava-config": "XDG_CONFIG_HOME/cava/config",
         "framerate": 80,
         "autosens": 1,
         "bars": 25,
@@ -96,13 +96,13 @@
         "monstercat": true,
         "waves": false,
         "sleep-timer": 4,
-        "hide-on-silence": true,
+        "hide-on-silence": false,
         "bar_delimiter": 0,
         "method": "pipewire",
         "input-delay": 1,
 
         "on-click": "playerctl -p spotify play-pause",
-        "on-click-right": "$HOME/.scripts/spotify.sh",
+        "on-click-right": "$XDG_SCRIPTS_HOME/spotify.sh",
         "on-scroll-up": "playerctl -p spotify next",
         "on-scroll-down": "playerctl -p spotify previous",
         "format-icons": [
@@ -134,7 +134,7 @@
 
     "wireplumber": {
         "format": " 󰋋 {volume}%",
-        "on-click": "$HOME/.scripts/volume.sh",
+        "on-click": "$XDG_SCRIPTS_HOME/volume.sh",
 	"on-click-middle": "qjackctl",
 	"on-click-right": "easyeffects",
         "format-muted": "󰟎 ",
@@ -158,7 +158,7 @@
         "format-ethernet": "   {bandwidthUpBytes}  {bandwidthDownBytes}",
         "format-wifi": "   {bandwidthUpBytes}  {bandwidthDownBytes}",
         "format-disconnected": "⚠ No Internet",
-        "on-click": "$HOME/.scripts/network.sh",
+        "on-click": "$XDG_SCRIPTS_HOME/network.sh",
         "tooltip": true,
         "tooltip-format-ethernet": " |󰯎 {bandwidthTotalBytes}",
         "tooltip-format-wifi": " {essid} ({signalStrength}%)",

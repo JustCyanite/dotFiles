@@ -18,6 +18,8 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export SUDO_PROMPT="$(tput setab 1 setaf 7 bold)[sudo]$(tput sgr0) $(tput setaf 6)password for$(tput sgr0) $(tput setaf 5)%p$(tput sgr0): "
 
+export XCURSOR_SIZE=24
+export XCURSOR_THEME="Catppuccin Mocha Mauve"
 
 # Change the default crypto/weather monitor sites.
 # export CRYPTOURL="rate.sx"
@@ -28,7 +30,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_SCRIPTS_HOME="$HOME/.scripts"
-export XDG_PICTURES_DIR="$HOME/Pictures/"
+export XDG_PICTURES_DIR="$HOME/Pictures"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 export INPUTRC="$XDG_CONFIG_HOME/shell/inputrc"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"

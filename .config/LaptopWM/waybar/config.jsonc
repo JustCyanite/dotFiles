@@ -79,7 +79,7 @@
         "max-length": 25,
         "exec": "playerctl -p spotify_player metadata --format '{\"text\": \"{{artist}} \", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
         "on-click": "playerctl -p spotify_player play-pause",
-        "on-click-right": "$HOME/.scripts/spotify.sh",
+        "on-click-right": "XDG_SCRIPTS_HOME/spotify.sh",
         "on-scroll-up": "playerctl -p spotify_player next",
         "on-scroll-down": "playerctl -p spotify_player previous",
         "format-icons": {
@@ -89,7 +89,7 @@
     },
     
     "cava": {
-        "cava-config": "$HOME/.config/cava/config",
+        "cava-config": "$XDG_CONFIG_HOME/cava/config",
         "framerate": 80,
         "autosens": 1,
         "bars": 25,
@@ -103,7 +103,7 @@
         "input-delay": 1,
 
         "on-click": "playerctl -p spotify_player play-pause",
-        "on-click-right": "$HOME/.scripts/spotify.sh",
+        "on-click-right": "XDG_SCRIPTS_HOME/spotify.sh",
         "on-scroll-up": "playerctl -p spotify_player next",
         "on-scroll-down": "playerctl -p spotify_player previous",
         "format-icons": [
@@ -135,7 +135,7 @@
 
     "wireplumber": {
         "format": " 󰋋 {volume}%",
-        "on-click": "$HOME/.scripts/volume.sh",
+        "on-click": "XDG_SCRIPTS_HOME/volume.sh",
 	"on-click-middle": "qjackctl",
 	"on-click-right": "easyeffects",
         "format-muted": "󰟎 ",

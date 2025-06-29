@@ -1,4 +1,4 @@
-monitor =,preferred,auto,1.25
+monitor =,preferred,auto,1
 
 xwayland {
     force_zero_scaling = true
@@ -8,7 +8,6 @@ xwayland {
 exec-once = pipewire & wireplumber & easyeffects --gapplication-service 
 exec-once = systemctl --user start hyprpolkitagent
 exec-once = hyprpaper 
-exec-once = hyprpm reload -n
 exec-once = wl-paste --type text --watch cliphist store
 exec-once = wl-paste --type image --watch cliphist store
 exec-once = waybar & fcitx5
@@ -21,35 +20,27 @@ env = HYPRCURSOR_THEME,Catppuccin Mocha Mauve
 env = HYPRCURSOR_SIZE,24
 
 ## XDG Things
-#env = LIBVA_DRIVER_NAME=nvidia
+env = LIBVA_DRIVER_NAME=nvidia
 env = XDG_SESSION_TYPE=wayland
 env = WLR_NO_HARDWARE_CURSORS,1
 env = WLR_DRM_NO_ATOMIC,1
 env = GBM_BACKEND=nvidia-drm
-env = XDG_CURRENT_DESKTOP,Hyprland
-#env = __GLX_VENDOR_LIBRARY_NAME=nvidia
+env = __GLX_VENDOR_LIBRARY_NAME=nvidia
 env = BEMENU_BACKEND,wayland
+env = XDG_CURRENT_DESKTOP,Hyprland
 
-## Styling Envs
-env = BAT_THEME="Catppuccin-Mocha"
+## Styling Environments
 env = ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+env = BAT_THEME="Catppuccin-Mocha"
 env = GDK_SCALE,1.5
 
 ###----------------------------CONFIG STARTS HERE----------------------------###
-
-permission = /usr/(bin|local/bin)hyprpm, plugin, allow
-
-plugin {
-  hyprwinwrap {
-    class = kitty-bg
-  }
-}
 
 input {
     kb_layout = us
     kb_variant =
     kb_model =
-    kb_options = caps:swapescape
+#kb_options = caps:swapescape
     kb_rules =
 
     repeat_delay = 300
@@ -70,13 +61,13 @@ general {
 
     no_border_on_floating = false
 
-    allow_tearing = false
+    allow_tearing = true
 }
 
 decoration {
     rounding = 8
     blur {
-        enabled = true
+        enabled = false
         size = 2
         passes = 1
         new_optimizations = true
@@ -91,7 +82,7 @@ decoration {
     }
 
     active_opacity = 1.0
-    inactive_opacity = 0.85
+    inactive_opacity = 0.9
 }
 
 animations {
@@ -118,8 +109,8 @@ misc {
     disable_hyprland_logo = true
     #force_hypr_chan = false
 
-    enable_swallow = false
-    swallow_regex = class:(kitty)
+    enable_swallow = true
+    swallow_regex = class:kitty
 
     mouse_move_enables_dpms = true
     key_press_enables_dpms = true
@@ -143,38 +134,43 @@ gestures {
     workspace_swipe = false
 }
 
-# Window Rules
-windowrule = noblur, class:(firefox) 
-windowrule = opaque, class:(firefox)
+### Window Rules
+windowrule = noblur, class:zen
+windowrule = opaque, class:zen
 
-windowrule = float, class:(pulsemixer)
-windowrule = size 55% 45%, class:(pulsemixer)
-windowrule = move 0% 0%, class:(org.pulseaudio.pavucontrol)
+windowrule = float, class:qt6ct
+windowrule = size 55% 45%, class:qt6ct
 
-windowrule = float, class:(org.pulseaudio.pavucontrol)
-windowrule = size 40% 50%, class:(org.pulseaudio.pavucontrol)
-windowrule = move 59.5% 5%, class:(org.pulseaudio.pavucontrol)
+windowrule = float, class:nwg-look
+windowrule = size 55% 45%, class:nwg-look
 
-windowrule = float, class:(nm-connection-editor)
-windowrule = size 40% 50%, class:(nm-connection-editor)
-windowrule = move 59.5% 5%, class:(nm-connection-editor)
+windowrule = float, class:pulsemixer
+windowrule = size 55% 45%, class:pulsemixer
+
+windowrule = float, class:org.pulseaudio.pavucontrol
+windowrule = size 40% 50%, class:org.pulseaudio.pavucontrol
+windowrule = move 59.5% 5%, class:org.pulseaudio.pavucontrol
+
+windowrule = float, class:nm-connection-editor
+windowrule = size 40% 50%, class:nm-connection-editor
+windowrule = move 59.5% 5%, class:nm-connection-editor
 
 windowrule = float, class:blueman-manager
 windowrule = size 40% 50%, class:blueman-manager
 windowrule = move 59.5% 5%, class:blueman-manager
 
 $mainMod = SUPER
-# Mouse Binds
-# Moving Workspaces
-bind = $mainMod, tab, workspace, e+1
-bind = $mainMod SHIFT, tab, workspace, e-1
+### Mouse Binds
+## Volume Control
+bind = $mainMod, mouse_up, exec, pulsemixer --change-volume -5
+bind = $mainMod, mouse_down, exec, pulsemixer --change-volume 5
 
-# Moving & Resizing Windows
+## Moving & Resizing Windows
 bindm = $mainMod, mouse:272, movewindow
 bindm = $mainMod, mouse:273, resizewindow
 
-# Key Binds
-# Moving Workspaces
+### Key Binds
+## Moving Workspaces
 bind = $mainMod, 1, workspace, 1
 bind = $mainMod, 2, workspace, 2
 bind = $mainMod, 3, workspace, 3
@@ -185,6 +181,9 @@ bind = $mainMod, 7, workspace, 7
 bind = $mainMod, 8, workspace, 8
 bind = $mainMod, 9, workspace, 9
 bind = $mainMod, 0, workspace, 10
+
+bind = $mainMod, tab, workspace, e+1
+bind = $mainMod SHIFT, tab, workspace, e-1
 
 # Moving Windows To Workspace
 bind = $mainMod SHIFT, 1, movetoworkspace, 1
@@ -200,12 +199,11 @@ bind = $mainMod SHIFT, 0, movetoworkspace, 10
 
 # Executing Programs
 bind = $mainMod, return, exec, kitty
-bind = $mainMod SHIFT, ESCAPE, exit,
-bind = $mainMod SHIFT, ESCAPE, exec, killall pipewire wireplumber spotifyd, 
+bind = $mainMod SHIFT, ESCAPE, exit
+bind = $mainMod SHIFT, ESCAPE, exec, killall pipewire wireplumber spotifyd 
 bind = $mainMod, Q, killactive,
-bind = $mainMod SHIFT, Q, exec, hyprctl kill
 bind = $mainMod, W, exec, zen-browser -P Clong
-bind = $mainMod SHIFT, W, exec, whatsapp-for-linux
+bind = $mainMod SHIFT, W, exec, zapzap
 bind = $mainMod, E, exec, zen-browser -P Work
 bind = $mainMod, R, exec, $XDG_SCRIPTS_HOME/bemenu.sh
 bind = $mainMod, Y, exec, zen-browser -no-remote -P Youtube
@@ -219,14 +217,14 @@ bind = $mainMod, C, exec, networkmanager_dmenu
 bind = $mainMod, V, togglefloating, 
 bind = $mainMod SHIFT, V, exec, $XDG_SCRIPTS_HOME/clipman.sh
 bind = $mainMod, B, exec, zen-browser -no-remote -P Guest
-bind = $mainMod, M, exec, kitty -c sh spt
-bind = $mainMod SHIFT, M, exec, spotifyd
+bind = $mainMod, M, exec, spotify
 
 bind = $mainMod, F9, exec, $XDG_SCRIPTS_HOME/waybar.sh
 bind = $mainMod, F10, exec, $XDG_SCRIPTS_HOME/hyprswitcher.sh
 bind = $mainMod, F11, exec, killall spotifyd
-bindl = $mainMod, F12, exec, hyprshot -zm output -o $HYPRSHOT_DIR/
-bindl = $mainMod SHIFT, F12, exec, hyprshot -zm region --clipboard-only 
+bind = $mainMod, F12, exec, hyprshot -zm output -o $HOME/Pictures/Screenshots/
+bind = $mainMod SHIFT, F12, exec, hyprshot -zm region -o $HOME/Pictures/Screenshots/
+bind = $mainMod SHIFT, S, exec, hyprshot --clipboard-only -zm output 
 bind = $mainMod SHIFT, DELETE, exec, cliphist wipe
 bind = $mainMod, Home, exec, $XDG_SCRIPTS_HOME/pwReset.sh
 
@@ -248,14 +246,14 @@ bind = $mainMod SHIFT, J, movewindow, d
 bind = $mainMod SHIFT, F, fullscreen, 0
 #bind = $mainMod SHIFT, T, fakefullscreen
 
-# Screen Management
-bind = $mainMod SHIFT, comma, exec, brightnessctl s 8%-
-bind = $mainMod SHIFT, period, exec, brightnessctl s 8%+
+## Screen Management
+bind = $mainMod SHIFT, comma, exec, ddcutil setvcp 10 - 20
+bind = $mainMod SHIFT, period, exec, ddcutil setvcp 10 + 20
+bind = $mainMod SHIFT, F5, exec, pgrep -f hyprsunset && killall hyprsunset || hyprsunset -g 50
 
-bindl = $mainMod , F4, exec, sleep 1 && hyprctl dispatch dpms off
-bind = $mainMod SHIFT, F4, exec, hyprlock
+bind = $mainMod , F4, exec, sleep 1 && hyprctl dispatch dpms off
 
-bind  = $mainMod SHIFT, Control_R, exec, hyprlock & sleep 0.5 && systemctl suspend
+bind  = $mainMod SHIFT, Control_R, exec, systemctl suspend
 
 # Wireless Management
-bind = $mainMod, F3, exec, rfkill toggle 1 5
+bind = $mainMod, F3, exec, bluetoothctl power $(bluetoothctl show | grep -q "Powered: yes" && echo off || echo on)
