@@ -11,11 +11,16 @@ export EDITOR="nvim"
 export TERMINAL="kitty"
 #export TERMINAL_PROG="kitty"
 export BROWSER="zen-browser"
-export QT_QPA_PLATFORM="wayland;xcb"
+export QT_QPA_PLATFORM="wayland,xcb"
 export QT_QPA_PLATFORMTHEME="qt6ct"
 #export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
+
+export ELECTRON_OZONE_PLATFORM_HINT="wayland"
+export VESKTOP_USER_FLAGS="--ozone-platform-hint=wayland"
+export SPOTIFY_USER_FLAGS="--ozone-platform-hint=wayland"
+
 export SUDO_PROMPT="$(tput setab 1 setaf 7 bold)[sudo]$(tput sgr0) $(tput setaf 6)password for$(tput sgr0) $(tput setaf 5)%p$(tput sgr0): "
 
 export XCURSOR_SIZE=24
@@ -31,13 +36,15 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_SCRIPTS_HOME="$HOME/.scripts"
 export XDG_PICTURES_DIR="$HOME/Pictures"
+
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 export INPUTRC="$XDG_CONFIG_HOME/shell/inputrc"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+
 export WALLPAPERDIR="$HOME/Wallpapers"
 export HYPRDIR="$XDG_CONFIG_HOME/hypr"
 export HYPRSHOT_DIR="$XDG_PICTURES_DIR/Screenshots"
-#export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+
 export HISTFILE="$XDG_CACHE_HOME/zshistory"
 
 export BEMENU_OPTS='-w -B 2 -R 8 --scrollbar autohide -s --fn "Cantarell Medium" --binding vim --fixed-height --bdr "#FF00FF" --scf '#93E1D4' --scb '#1F1F2F' --fb "#1E1E2E" --ff "#CDD6F4" --nb "#1E1E2E" --nf "#CDD6F4" --tb "#1E1E2E" --hb "#1111B" --tf "#F38BA8" --hf "#F9E2AF" --nf "#CDD6F4" --af "#CDD6F4" --ab "#1E1E2E"'
