@@ -135,7 +135,7 @@
     "wireplumber": {
         "format": " 󰋋 {volume}%",
         "on-click": "$XDG_SCRIPTS_HOME/volume.sh",
-	"on-click-middle": "qjackctl",
+	"on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
 	"on-click-right": "easyeffects",
         "format-muted": "󰟎 ",
         "max-volume": 150,
