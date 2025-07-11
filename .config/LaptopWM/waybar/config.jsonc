@@ -135,7 +135,7 @@
 
     "wireplumber": {
         "format": " 󰋋 {volume}%",
-        "on-click": "XDG_SCRIPTS_HOME/volume.sh",
+        "on-click": "pgrep -f pavucontrol && killall pavucontrol || pavucontrol",
 	"on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
 	"on-click-right": "easyeffects",
         "format-muted": "󰟎 ",
@@ -168,7 +168,7 @@
         "format-ethernet": "   {bandwidthUpBytes}  {bandwidthDownBytes}",
         "format-wifi": "   {bandwidthUpBytes}  {bandwidthDownBytes}",
         "format-disconnected": "⚠ No Internet",
-        "on-click": "$XDG_SCRIPTS_HOME/network.sh",
+        "on-click": "pgrep -f nm-connection-editor && killall nm-connection-editor || nm-connection-editor",
         "on-click-right": "$XDG_SCRIPTS_HOME/bluetooth.sh",
         "on-click-middle": "rfkill toggle all",
         "tooltip": true,
@@ -187,6 +187,7 @@
     "clock": {
         "format": " {:%H:%M}",
         "interval": 60,
+//        "on-click": "pgrep -f activate-linux && killall activate-linux || activate-linux",
         "tooltip": true,
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
             "calendar": {
