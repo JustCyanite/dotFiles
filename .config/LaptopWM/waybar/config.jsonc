@@ -170,6 +170,7 @@
         "format-disconnected": "⚠ No Internet",
         "on-click": "$XDG_SCRIPTS_HOME/network.sh",
         "on-click-right": "$XDG_SCRIPTS_HOME/bluetooth.sh",
+        "on-click-middle": "rfkill toggle all",
         "tooltip": true,
         "tooltip-format-ethernet": " |󰯎 {bandwidthTotalBytes}",
         "tooltip-format-wifi": " {essid} ({signalStrength}%)",
