@@ -175,7 +175,7 @@
         "tooltip-format-ethernet": " |󰯎 {bandwidthTotalBytes}",
         "tooltip-format-wifi": " {essid} ({signalStrength}%)",
         "tooltip-format-disconnected": "⚠ Disconnected",
-        "interval": 1
+        "interval": 5
     },
 
     "bluetooth": {
