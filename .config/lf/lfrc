@@ -68,11 +68,11 @@ map Md mkdir
 map \\d dragdrop
 
 # Movement
-map gD cd ~/Documents
-map gd cd ~/Downloads
-map gp cd ~/Pictures
-map gc cd ~/.config
-map gH cd ~/.config/hypr
-map gv cd ~/Videos
+map gD cd $XDG_DOCUMENTS_DIR
+map gd cd $XDG_DOWNLOADS_DIR
+map gp cd $XDG_PICTURES_DIR
+map gc cd $XDG_CONGIG_HOME
+map gH cd $HYPRDIR
+map gv cd $XDG_VIDEOS_DIR
 map gs cd ~/.local/bin
 map gt cd ~/.local/share/Trash/files
