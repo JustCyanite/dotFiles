@@ -78,17 +78,17 @@
         "max-length": 25,
         "exec": "playerctl -p spotify metadata --format '{\"text\": \"{{artist}} \", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
         "on-click": "playerctl -p spotify play-pause",
-        "on-click-right": "XDG_SCRIPTS_HOME/spotify.sh",
+        "on-click-right": "spotify",
         "on-scroll-up": "playerctl -p spotify next",
         "on-scroll-down": "playerctl -p spotify previous",
         "format-icons": {
-            "Playing": "<span foreground='#94e2d5'></span>",
-            "Paused": "<span foreground='#f38ba8'></span>"
+            "Playing": "<span foreground='#94e2d5'> </span>",
+            "Paused": "<span foreground='#f38ba8'> </span>"
         }
     },
     
     "cava": {
-        "cava-config": "XDG_CONFIG_HOME/cava/config",
+        "cava-config": "$XDG_CONFIG_HOME/cava/config",
         "framerate": 80,
         "autosens": 1,
         "bars": 25,
@@ -102,7 +102,7 @@
         "input-delay": 1,
 
         "on-click": "playerctl -p spotify play-pause",
-        "on-click-right": "$XDG_SCRIPTS_HOME/spotify.sh",
+        "on-click-right": "spotify",
         "on-scroll-up": "playerctl -p spotify next",
         "on-scroll-down": "playerctl -p spotify previous",
         "format-icons": [
@@ -124,7 +124,7 @@
         "max-length": 25,
         "exec": "playerctl -p spotify metadata  --format '{\"text\": \"{{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
         "on-click": "playerctl -p spotify play-pause",
-        "on-click-right": "kitty sh -c spt",
+        "on-click-right": "spotify",
         "on-scroll-up": "playerctl -p spotify next",
         "on-scroll-down": "playerctl -p spotify previous"
     },
