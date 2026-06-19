@@ -1,7 +1,4 @@
 #!/bin/sh
 
-if [ $(pgrep -f 'blueman-manager') ]; then
-    killall blueman-manager
-fi
-blueman-manager
+pgrep -f blueman-manager && killall blueman-manager || blueman-manager
 exit

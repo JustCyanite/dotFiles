@@ -2,5 +2,4 @@
 
 
 spotify
-kitty sh -c spt
 exit

@@ -1,9 +1,8 @@
 #!/bin/sh
 
-#!/bin/sh
-
-if [ $(pgrep 'pavucontrol') ]; then
-    killall pavucontrol
-fi
-pavucontrol
+pgrep -f pwvucontrol && killall pwvucontrol || pwvucontrol
+#if [ $(pgrep 'pwvucontrol') ]; then
+#    killall pwvucontrol
+#fi
+#pwvucontrol
 exit

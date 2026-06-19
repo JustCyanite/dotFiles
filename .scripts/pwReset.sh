@@ -1,5 +1,4 @@
 #!/bin/sh
 killall pipewire wireplumber easyeffects &&
-pipewire & wireplumber &
-easyeffects --gapplication-service
+pipewire & wireplumber & easyeffects
 exit
