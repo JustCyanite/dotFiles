@@ -39,7 +39,7 @@
     "cpu": {
         "format": "{usage}%  ",
         "tooltip": true,
-        "on-click": "kitty sh -c 'btop'",
+        "on-click": "pgrep -f 'btop' && killall btop || kitty sh -c 'btop'",
         "interval": 3
     },
 
@@ -47,7 +47,7 @@
         "format": "{}%  ",
         "interval": 3,
         "max-length": 10,
-        "on-click": "kitty sh -c 'btop'",
+        "on-click": "pgrep -f 'btop' && killall btop || kitty sh -c 'btop'",
         "tooltip": true,
         "tooltip-format": "{used}GB/{total}GB  \n{swapUsed:0.2f}GB/{swapTotal:0.2f}GB  "
     },
@@ -135,7 +135,7 @@
 
     "wireplumber": {
         "format": " 󰋋 {volume}%",
-        "on-click": "pgrep -f pavucontrol && killall pavucontrol || pavucontrol",
+        "on-click": "$XDG_SCRIPTS_HOME/volume.sh",
 	"on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
 	"on-click-right": "easyeffects",
         "format-muted": "󰟎 ",
@@ -152,7 +152,7 @@
     "format": "{capacity}% {icon}",
     "format-icons": ["", "", "", "", ""],
     "max-length": 25,
-    "on-click": "$XDG_SCRIPTS_HOME/batteryMode.sh",
+    "on-click": "tuned-gui",
     "on-scroll-up": "brightnessctl s 2%+",
     "on-scroll-down": "brightnessctl s 2%-"
     },   

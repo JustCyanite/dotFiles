@@ -37,7 +37,7 @@
     "cpu": {
         "format": "{usage}%  ",
         "tooltip": true,
-        "on-click": "kitty sh -c 'btop'",
+        "on-click": "pgrep -f 'btop' && killall btop || kitty sh -c 'btop'",
         "interval": 3
     },
 
@@ -45,7 +45,7 @@
         "format": "{}%  ",
         "interval": 3,
         "max-length": 10,
-        "on-click": "kitty sh -c 'btop'",
+        "on-click": "pgrep -f 'btop' && killall btop || kitty sh -c 'btop'",
         "tooltip": true,
         "tooltip-format": "{used}GB/{total}GB  \n{swapUsed:0.2f}GB/{swapTotal:0.2f}GB  "
     },
